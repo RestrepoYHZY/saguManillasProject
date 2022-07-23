@@ -1,0 +1,23 @@
+{
+    "name": "windows-10/sagu-manillas",
+    "description": "Proyecto Sagu Manillas",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "DB\\": "db/",
+            "Config\\": "config/",
+            "Controllers\\": "controllers/",
+            "Models\\": "models/"
+           
+        }
+    },
+    "authors": [
+        {
+            "name": "Yhaizley Restrepo",
+            "email": "yhazrestrepo@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
