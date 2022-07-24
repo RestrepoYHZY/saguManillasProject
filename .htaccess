@@ -1,0 +1,14 @@
+# Oculto las capertas del proyecto
+
+Options All -Indexes
+
+#Configurar los errores 404 y 403
+
+ErrorDocument 404 /ventas/
+ErrorDocument 403 /ventas/
+
+# habilitar las url amigables
+RewriteEngine On
+RewriteRule ^([-a-zA-Z0-9/()_]+)$ index.php?ruta=$1
+
+

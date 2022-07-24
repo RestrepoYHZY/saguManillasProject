@@ -15,44 +15,47 @@
 </head>
 
 <body>
-    <div id="content">
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <h1>Registro de Ventas</h1>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/inicio">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ventas">Ventas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="compras">Compras</a>
+                </li>
+            </ul>
+        </nav>
 
-        <section class="containerNav">
-            <div class="container">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../newVenta/newVenta.html">Nueva Venta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../listaVenta/listVenta.html">Listado de ventas</a>
-                    </li>
-                </ul>
-            </div>
-        </section>
 
         <?php
         if (isset($_GET['ruta'])) {
-            $ruta = explode('/', $_GET['ruta']);
-            var_dump($rutas);
+            $rutas = explode('/', $_GET['ruta']);
+            //var_dump($rutas);
+            $ruta = $rutas[0];
             //echo "$ruta";
+            if (
+
+                $ruta == 'ventas' ||
+                $ruta == 'compras'
+            ) {
+                include "modulos/{$ruta}.php";
+            } else {
+                include 'modulos/404.php';
+            }
         }
+
         ?>
 
+    </div>
 
 
 
-
-        <script src="views/plugins/bootstrap/jquery.slim.min.js"></script>
-        <script src=" views/plugins/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="views/plugins/bootstrap/jquery.slim.min.js"></script>
+    <script src=" views/plugins/bootstrap/bootstrap.bundle.min.js"></script>
 
 
 </body>
