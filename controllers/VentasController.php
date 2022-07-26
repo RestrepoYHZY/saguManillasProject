@@ -15,4 +15,16 @@ class VentasController
     {
         return Ventas::ventas();
     }
+
+    public function registrarUsuario()
+    {
+        if (isset($_POST['cliente'])) {
+            $cedulaC = $_POST['cedulaC'];
+            $telefonoC = $_POST['telefonoC'];
+            $producto = $_POST['producto'];
+            $nameProducto = $_POST['nameProducto'];
+            $idProducto = $_POST['idProducto'];
+            $cantidad = $_POST['cantidad'];
+        }
+    }
 }

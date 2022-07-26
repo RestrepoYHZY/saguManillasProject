@@ -1,12 +1,3 @@
-<?php
-
-use Models\Ventas;
-
-$ventas = \Controllers\ventasController::listarVentas();
-
-?>
-
-
 <div id="content">
     <section>
         <div class="container">
@@ -42,9 +33,9 @@ $ventas = \Controllers\ventasController::listarVentas();
                     <h5 class="card-title">CLIENTE <i class='bx bx-message-square-add icon' title="Nuevo Cliente "></i></h5>
                     <form>
                         <div class="row mb-3">
-                            <label for="inputNombre" class="col-sm-2 col-form-label">Nombre</label>
+                            <label for="cliente" class="col-sm-2 col-form-label">Nombre</label>
                             <div class="col-sm-10">
-                                <select class="form-select form-select-sm" aria-label=".form-select-lg example">
+                                <select id="cliente" name="cliente" class="form-control">
                                     <option selecte>Cliente 1</option>
                                     <option value="1">Cliente 2</option>
                                     <option value="2">Cliente 3</option>
@@ -54,16 +45,16 @@ $ventas = \Controllers\ventasController::listarVentas();
                         </div>
 
                         <div class="row mb-3">
-                            <label for="inputtext" class="col-sm-2 col-form-label ">Cédula</label>
+                            <label for="cedulaC" class="col-sm-2 col-form-label ">Cédula</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputcc">
+                                <input id="cedulaC" type="text" name="cedulac" class="form-control" required>
                             </div>
                         </div>
 
                         <div class="row mb-3">
-                            <label for="inputtel" class="col-sm-2 col-form-label ">Telefono</label>
+                            <label for="telefonoC" class="col-sm-2 col-form-label ">Telefono</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputtel">
+                                <input type="text" class="form-control" id="telefonoC" required>
                             </div>
                         </div>
 
@@ -83,9 +74,9 @@ $ventas = \Controllers\ventasController::listarVentas();
                         <h5 class="card-title">PRODUCTO</h5>
                         <form>
                             <div class="row mb-3">
-                                <label for="inputNombre" class="col-sm-2 col-form-label">Producto</label>
+                                <label for="producto" class="col-sm-2 col-form-label">Producto</label>
                                 <div class="col-sm-10">
-                                    <select class="form-select form-select-sm" aria-label=".form-select-lg example">
+                                    <select id="producto" name="producto" class="form-control">
                                         <option selecte>Accesorio</option>
                                         <option value="1">Personalizado</option>
                                     </select>
@@ -93,24 +84,24 @@ $ventas = \Controllers\ventasController::listarVentas();
                             </div>
 
                             <div class="row mb-3">
-                                <label for="inputtext" class="col-sm-2 col-form-label ">Nombre</label>
+                                <label for="nameProducto" class="col-sm-2 col-form-label ">Nombre</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputcc">
+                                    <input type="text" class="form-control" id="nameProducto" required>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
-                                <label for="inputtel" class="col-sm-2 col-form-label ">Código</label>
+                                <label for="idProducto" class="col-sm-2 col-form-label ">Código</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputtel">
+                                    <input type="text" class="form-control" id="idProducto" required>
                                 </div>
                             </div>
 
                             <form>
                                 <div class="row mb-3">
-                                    <label for="inputNombre" class="col-sm-2 col-form-label">Cantidad</label>
+                                    <label for="cantidad" class="col-sm-2 col-form-label"> Cantidad</label>
                                     <div class="col-sm-10">
-                                        <select class="form-select form-select-sm" aria-label=".form-select-lg example">
+                                        <select id="cantidad" name="cantidad" class="form-control">
                                             <option selecte>1</option>
                                             <option value="1">2</option>
                                             <option value="2">3</option>

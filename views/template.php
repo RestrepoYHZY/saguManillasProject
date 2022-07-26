@@ -40,7 +40,9 @@
             if (
 
                 $ruta == 'ventas' ||
-                $ruta == 'compras'
+                $ruta == 'compras' ||
+                $ruta == 'listVentas' ||
+                $ruta == 'registrar-venta'
             ) {
                 include "modulos/{$ruta}.php";
             } else {
