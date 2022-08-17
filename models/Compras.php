@@ -12,7 +12,7 @@ class Compras
      * @return array
      */
     //
-    public static function Compras(): array
+    public static function compras(): array
     {
         $stmt = Conexion::conectar()->prepare(
             "select rc.idRegistro_compra, m.Nombre as NombreMaterial, cm.Cantidad,  rc.Fecha, cm.MontoTotal

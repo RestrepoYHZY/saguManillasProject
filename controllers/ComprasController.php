@@ -1,4 +1,4 @@
-<?
+<?php
 
 namespace Controllers;
 //indicar que se va user el modelo 

@@ -35,11 +35,9 @@
                                     <label for="inputCategoria" class="col-sm-2 col-form-label">Categoria</label>
                                     <div class="col-sm-10">
                                         <select class="form-control">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                            <option>Hilo</option>
+                                            <option>Cadena</option>
+                                            <option>Dijes</option>
                                         </select>
                                     </div>
                                 </div>

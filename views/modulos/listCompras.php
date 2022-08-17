@@ -5,7 +5,7 @@ namespace ComprasController;
 $compras = \Controllers\ComprasController::listarCompras();
 //nombre pagina y lugar donde se estan listo en modelos
 
-var_dump($compras);
+// var_dump($compras); //Util para mostrar un script de lo que se veria en las tablas
 ?>
 
 
