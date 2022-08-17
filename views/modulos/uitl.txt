@@ -1,0 +1,158 @@
+<?php
+
+$contactos = \Controllers\ContactosController::listarClientes();
+
+// var_dump($contactos);
+
+?>
+
+<div id="content ">
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <h1>Contactos</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="containerNav">
+        <div class="container">
+            <ul class="nav nav-tabs font-weight-bold">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="clientes">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="proveedores">Proveedores</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!--===============================================-->
+
+
+    <div class="container col-12 ">
+        <div class="row">
+            <div class="col-8 mt-3">
+                <section class=" containerList">
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-2 stat ">
+                                        <h4>Codigo</h4>
+                                    </div>
+                                    <div class="col-lg-2 stat">
+                                        <h4>Nombre</h4>
+                                    </div>
+
+                                    <div class="col-lg-2 stat ">
+                                        <h4>Telefono</h4>
+                                    </div>
+                                    <div class="col-lg-2 stat ">
+                                        <h4>Email</h4>
+                                    </div>
+                                    <div class="col-lg-2 stat ">
+                                        <h4>Dirección</h4>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <h4>Acción</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+
+                <?php if (sizeof($contactos) > 0) : ?>
+                    <?php foreach ($contactos as $contacto) : ?>
+
+                        <div class="col-12 mt-3">
+                            <section class=" containerList">
+                                <div class="container">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-2 stat ">
+                                                    <h4><?= $contacto['idCliente']; ?></h4>
+                                                </div>
+                                                <div class="col-lg-2 stat">
+                                                    <h4><?= $contacto['Nombre']; ?></h4>
+                                                </div>
+
+                                                <div class="col-lg-2 stat ">
+                                                    <h4><?= $contacto['Telefono']; ?></h4>
+                                                </div>
+                                                <div class="col-lg-2 stat ">
+                                                    <h4><?= $contacto['Email']; ?></h4>
+                                                </div>
+                                                <div class="col-lg-2 stat ">
+                                                    <h4><?= $contacto['Direccion']; ?></h4>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <a href="#" class="btn btn-danger "><i class='bx bx-trash icon'></i> Eliminar </a>
+                                                    <a href="#" class="btn btn-primary mt-2"><i class='bx bx-tredit-alt'></i> Editar </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+
+
+                    <!--===============================================-->
+
+                    <div class="card  col-4">
+                        <div class=" card-body">
+
+                            <div class="row justify-content-center">
+                                <div class=" col-12 text-center">
+                                    <h3>Nuevo Cliente</h3>
+                                </div>
+
+                                <div class="col-12">
+                                    <form method="post" action="" class="justify-content-right">
+                                        <div class="form-group">
+                                            <label for="nombre">Nombre</label>
+                                            <input type="text" name="nombre" id="nombre" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="apellido">Apellido</label>
+                                            <input type="text" name="apellido" id="apellido" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="telefono">Telefono</label>
+                                            <input type="text" name="telefono" id="telefono" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" name="email" id="email" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="direccion">Dirección</label>
+                                            <input type="text" name="direccion" id="direccion" class="form-control" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary">Añadir Cliente </button>
+                                        </div>
+                                    </form>
+                                    <?php
+                                    \Controllers\ContactosController::registrarCliente();
+
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+            </div>

@@ -1,16 +1,19 @@
 <?php
 
-use Models\Ventas;
+namespace ComprasController;
+//Peticion al controlador
+$compras = \Controllers\ComprasController::listarCompras();
+//nombre pagina y lugar donde se estan listo en modelos
 
-$ventas = \Controllers\ventasController::listarVentas();
-
+var_dump($compras);
 ?>
+
 
 
 <div id="content">
     <section>
         <div class="container col-10 mt-3">
-            <h1>Registro de Ventas</h1>
+            <h1>Registro de Compras</h1>
         </div>
     </section>
 
@@ -18,16 +21,18 @@ $ventas = \Controllers\ventasController::listarVentas();
         <div class="container col-10 mt-3">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" href="registrar-venta">Nueva Venta</a>
+                    <a class="nav-link" href="registrar-compra">Nueva Compra</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="listVentas">Listado de ventas</a>
+                    <a class="nav-link active" aria-current="page" href="listCompras">Listado de compras</a>
                 </li>
             </ul>
         </div>
     </section>
 
-    <!--=======================Listar Ventas========================-->
+
+    <!--======================Lista de Compras=========================-->
+
 
     <div class="col-12 mt-3 ">
         <section class=" containerList">
@@ -39,10 +44,10 @@ $ventas = \Controllers\ventasController::listarVentas();
                                 <h4>Codigo</h4>
                             </div>
                             <div class="col-lg-2 stat">
-                                <h4>Cliente</h4>
+                                <h4>Material</h4>
                             </div>
                             <div class="col-lg-2 stat ">
-                                <h4>Producto</h4>
+                                <h4>Cantidad</h4>
                             </div>
                             <div class="col-lg-2 stat ">
                                 <h4>Fecha</h4>
@@ -60,30 +65,31 @@ $ventas = \Controllers\ventasController::listarVentas();
         </section>
 
 
-        <?php if (sizeof($ventas) > 0) : ?>
-            <?php foreach ($ventas as $venta) : ?>
+        <!--======================Lista de Compras Dinamica=========================-->
+        <?php if (sizeof($compras) > 0) : ?>
+            <?php foreach ($compras as $compra) : ?>
                 <section class="containerPeople mt-2">
                     <div class="container">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-lg-2  fs-3 ">
-                                        <h5><?= $venta['idRegistro_venta']; ?></h5>
+                                    <div class="col-lg-2">
+                                        <h5><?= $compra['idRegistro_compra']; ?></h5>
                                     </div>
                                     <div class="col-lg-2  ">
-                                        <h5><?= $venta['NombreC']; ?></h5>
+                                        <h5><?= $compra['NombreMaterial']; ?></h5>
                                     </div>
                                     <div class="col-lg-2 ">
-                                        <h5><?= $venta['Nombre'] ?></h5>
+                                        <h5><?= $compra['Cantidad']; ?></h5>
                                     </div>
                                     <div class="col-lg-2 ">
-                                        <h5><?= $venta['Fecha'] ?></h5>
+                                        <h5><?= $compra['Fecha']; ?></h5>
                                     </div>
                                     <div class="col-lg-2 ">
-                                        <h5>$ <?= $venta['MontoTotal']; ?></h5>
+                                        <h5><?= $compra['MontoTotal']; ?></h5>
                                     </div>
                                     <div class="col-lg-2">
-                                        <a href="#" class=" btn btn-danger" onclick="return eliminarVenta()"><i class='bx bx-trash icon'></i> Eliminar</a>
+                                        <a href="#" class=" btn btn-small btn-danger"><i class='bx bx-trash icon'></i> Eliminar</a>
                                     </div>
                                 </div>
                             </div>
