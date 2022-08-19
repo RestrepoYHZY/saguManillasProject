@@ -10,8 +10,14 @@
     <link rel="stylesheet" href="views/plugins/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="./css/estilos.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css' rel='stylesheet'>
 
     <title>Sagu Manillas</title>
+
+    <script src="views/plugins/bootstrap/jquery.slim.min.js"></script>
+    <script src=" views/plugins/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src=" https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
 </head>
 
 <body>
@@ -68,8 +74,7 @@
 
 
 
-    <script src="views/plugins/bootstrap/jquery.slim.min.js"></script>
-    <script src=" views/plugins/bootstrap/bootstrap.bundle.min.js"></script>
+
 
 
 </body>

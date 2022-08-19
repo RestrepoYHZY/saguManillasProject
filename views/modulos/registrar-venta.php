@@ -50,20 +50,20 @@ $ventas = \Controllers\ventasController::listarVentas();
                                         </select>
                                     </div>
                                 </div>
-
-                                <div class="row mb-3">
-                                    <label for="inputtext" class="col-sm-2 col-form-label ">Cédula</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputcc">
-                                    </div>
-                                </div>
-
                                 <div class="row mb-3">
                                     <label for="inputtel" class="col-sm-2 col-form-label ">Telefono</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="inputtel">
                                     </div>
                                 </div>
+                                <div class="row mb-3">
+                                    <label for="inputtext" class="col-sm-2 col-form-label ">Dirección</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputcc">
+                                    </div>
+                                </div>
+
+
 
                             </form>
                         </div>
@@ -96,12 +96,6 @@ $ventas = \Controllers\ventasController::listarVentas();
                                     </div>
                                 </div>
 
-                                <div class="row mb-3">
-                                    <label for="inputCodigo" class="col-sm-2 col-form-label ">Código</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputCodigo">
-                                    </div>
-                                </div>
 
                                 <div class="row mb-3">
                                     <label for="inputCantidad" class="col-sm-2 col-form-label ">Cantidad</label>

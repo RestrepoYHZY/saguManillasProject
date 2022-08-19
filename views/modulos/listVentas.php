@@ -35,8 +35,8 @@ $ventas = \Controllers\ventasController::listarVentas();
                 <div class="card">
                     <div class="card-body">
                         <div class="row justify-content-center">
-                            <div class="col-lg-2 stat ">
-                                <h4>Codigo</h4>
+                            <div class="col-lg-1 stat ">
+                                <h4>Cod</h4>
                             </div>
                             <div class="col-lg-2 stat">
                                 <h4>Cliente</h4>
@@ -45,9 +45,12 @@ $ventas = \Controllers\ventasController::listarVentas();
                                 <h4>Producto</h4>
                             </div>
                             <div class="col-lg-2 stat ">
-                                <h4>Fecha</h4>
+                                <h4>Dirección</h4>
                             </div>
                             <div class="col-lg-2 stat ">
+                                <h4>Fecha</h4>
+                            </div>
+                            <div class="col-lg-1 stat ">
                                 <h4>Total</h4>
                             </div>
                             <div class="col-lg-2">
@@ -67,7 +70,7 @@ $ventas = \Controllers\ventasController::listarVentas();
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-lg-2  fs-3 ">
+                                    <div class="col-lg-1  ">
                                         <h5><?= $venta['idRegistro_venta']; ?></h5>
                                     </div>
                                     <div class="col-lg-2  ">
@@ -77,13 +80,16 @@ $ventas = \Controllers\ventasController::listarVentas();
                                         <h5><?= $venta['Nombre'] ?></h5>
                                     </div>
                                     <div class="col-lg-2 ">
-                                        <h5><?= $venta['Fecha'] ?></h5>
+                                        <h5><?= $venta['Direccion'] ?></h5>
                                     </div>
                                     <div class="col-lg-2 ">
-                                        <h5>$ <?= $venta['MontoTotal']; ?></h5>
+                                        <h5><?= $venta['Fecha'] ?></h5>
+                                    </div>
+                                    <div class="col-lg-1 ">
+                                        <h5><?= $venta['MontoTotal']; ?></h5>
                                     </div>
                                     <div class="col-lg-2">
-                                        <a href="#" class=" btn btn-danger" onclick="return eliminarVenta()"><i class='bx bx-trash icon'></i> Eliminar</a>
+                                        <a href="#" class=" btn btn-small btn-danger" onclick="return eliminarVenta()"><i class='bx bx-trash icon'></i> Eliminar</a>
                                     </div>
                                 </div>
                             </div>

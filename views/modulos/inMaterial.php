@@ -1,3 +1,10 @@
+<?php
+$listCategoriaMaterial = \Controllers\InventarioController::listarCategoriaMaterial();
+$listMaterial = \Controllers\InventarioController::listarMaterial(); //;
+
+?>
+
+
 <div class="container col-10 mt-3">
     <h1>Inventarios</h1>
 </div>
@@ -43,21 +50,24 @@
 
 
                         <div class=" col-12">
-                            <tbody>
-                                <td scope="row"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <a href='#' class="btn btn-small btn-primary"><i class=' bx bx-edit-alt'></i> </a>
-                                    <a href="#" class="btn btn-small btn-danger "><i class='bx bx-trash icon'></i></a>
+                            <?php if (sizeof($listMaterial) > 0) : ?>
+                                <?php foreach ($listMaterial as $material) : ?>
+                                    <tbody>
+                                        <td scope="row"><?= $material['idInventario']; ?></td>
+                                        <td><?= $material['Nombre']; ?></td>
+                                        <td><?= $material['color']; ?></td>
+                                        <td><?= $material['Cantidad']; ?></td>
+                                        <td><?= $material['ValorUnitario']; ?></td>
+                                        <td>
+                                            <a href='#' class="btn btn-small btn-primary"><i class=' bx bx-edit-alt'></i> </a>
+                                            <a href="#" class="btn btn-small btn-danger "><i class='bx bx-trash icon'></i></a>
 
-                                </td>
-                                </tr>
-                            </tbody>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </div>
-
 
                     </table>
                 </div>
@@ -80,9 +90,11 @@
                                 <div class="mb-3">
                                     <label for="" class="form-label">Materia Prima</label>
                                     <select class="form-control">
-                                        <option>Hilo</option>
-                                        <option>Ojo Turco</option>
-                                        <option>Dijes</option>
+                                        <?php if (sizeof($listCategoriaMaterial) > 0) : ?>
+                                            <?php foreach ($listCategoriaMaterial as $categoriaM) : ?>
+                                                <option><?= $categoriaM['Nombre']; ?></option>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
                                     </select>
                                 </div>
                                 <div class="form-group">

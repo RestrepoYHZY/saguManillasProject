@@ -1,3 +1,9 @@
+<?php
+$listCategoria = \Controllers\InventarioController::listarCategoriaAccesorio();
+$listAccesorio = \Controllers\InventarioController::listarAccesorio(); //;
+
+?>
+
 <div class="container col-10 mt-3">
     <h1>Inventarios</h1>
 </div>
@@ -23,8 +29,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <table class="table table-hover table-group-divider align-center">
+                    <table class="table table-hover table-group-divider align-center" id="tblAccesorio">
                         <thead>
+
                             <tr>
                                 <th scope="col">Codigo</th>
                                 <th scope="col">Categoria</th>
@@ -33,6 +40,7 @@
                                 <th scope="col">Precio</th>
                                 <th scope="col">Acción</th>
                             </tr>
+
                         </thead>
 
 
@@ -42,19 +50,24 @@
 
 
                         <div class=" col-12">
-                            <tbody>
-                                <td scope="row"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <a href='#' class="btn btn-small btn-primary"><i class=' bx bx-edit-alt'></i> </a>
-                                    <a href="#" class="btn btn-small btn-danger "><i class='bx bx-trash icon'></i></a>
+                            <?php if (sizeof($listAccesorio) > 0) : ?>
+                                <?php foreach ($listAccesorio as $accesorio) : ?>
+                                    <tbody>
+                                        <tr>
+                                            <td scope="row"><?= $accesorio['idInventario']; ?></td>
+                                            <td><?= $accesorio['NombreC']; ?></td>
+                                            <td><?= $accesorio['Nombre']; ?></td>
+                                            <td><?= $accesorio['Cantidad']; ?></td>
+                                            <td><?= $accesorio['ValorUnitario']; ?></td>
+                                            <td>
+                                                <a href='#' class="btn btn-small btn-primary "><i class=' bx bx-edit-alt'></i> </a>
+                                                <a href="#" class="btn btn-small btn-danger"><i class='bx bx-trash icon'></i></a>
 
-                                </td>
-                                </tr>
-                            </tbody>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         </div>
 
 
@@ -79,9 +92,12 @@
                                 <div class="mb-3">
                                     <label for="" class="form-label">Categoria</label>
                                     <select class="form-control">
-                                        <option>Aretes</option>
-                                        <option>Cadena</option>
-                                        <option>Manilla</option>
+                                        <?php if (sizeof($listCategoria) > 0) : ?>
+                                            <?php foreach ($listCategoria as $categoria) : ?>
+                                                <option><?= $categoria['Nombre']; ?></option>
+
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -91,12 +107,12 @@
 
                                 <div class="mb-3">
                                     <label class="form-label" for="cantidad">Cantidad</label>
-                                    <input type="number" name="cantidad" id="cantidad" class="form-control" min="1" max="100" required>
+                                    <input type="number" name="cantidad" id="cantidad" class="form-control" min="1" required>
                                 </div>
 
                                 <div class="mb-3">
                                     <label class="form-label" for="precio">Precio</label>
-                                    <input type="number" name="precio" id="precio" class="form-control" min="1" max="100" required>
+                                    <input type="number" name="precio" id="precio" class="form-control" min="1" required>
                                 </div>
 
                                 <div class="form-group">

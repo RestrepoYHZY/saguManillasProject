@@ -42,30 +42,25 @@
                                     </div>
                                 </div>
 
-                                <div class="row mb-3">
-                                    <label for="inputtext" class="col-sm-2 col-form-label ">Nombre</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputcc">
-                                    </div>
-                                </div>
 
-                                <div class="row mb-3">
-                                    <label for="inputCodigo" class="col-sm-2 col-form-label ">Código</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="inputCodigo">
-                                    </div>
-                                </div>
+
                                 <div class="row mb-3">
                                     <label for="inputCodigo" class="col-sm-2 col-form-label ">Color</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="inputCodigo">
                                     </div>
                                 </div>
+                                <div class="row mb-3">
+                                    <label for="inputCodigo" class="col-sm-2 col-form-label ">Precio</label>
+                                    <div class="col-sm-10">
+                                        <input type="Number" id="inputCodigo" min="1">
+                                    </div>
+                                </div>
 
                                 <div class="row mb-3">
                                     <label for="inputCantidad" class="col-sm-2 col-form-label  ">Cantidad</label>
                                     <div class="col-sm-10 ">
-                                        <input type="Number" id="inputCantidad" min="1" max="100">
+                                        <input type="Number" id="inputCantidad " min="1" for="inputCantidad">
                                     </div>
                                 </div>
 
@@ -117,6 +112,11 @@
                                         <tr class="espacio">
                                             <td>Cantidad</td>
                                             <td>1</td>
+                                        </tr>
+
+                                        <tr class="espacio">
+                                            <td>Precio Unidad</td>
+                                            <td>1000</td>
                                         </tr>
 
 
