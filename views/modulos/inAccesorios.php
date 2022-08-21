@@ -4,12 +4,12 @@ $listAccesorio = \Controllers\InventarioController::listarAccesorio(); //;
 
 ?>
 
-<div class="container col-10 mt-3">
+<div class="container col-11 mt-3">
     <h1>Inventarios</h1>
 </div>
 
 <section class="containerNav">
-    <div class="container col-10 mt-3">
+    <div class="container col-11 mt-3">
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a class="nav-link active" href="inAccesorios">Accesorios</a>
@@ -24,7 +24,7 @@ $listAccesorio = \Controllers\InventarioController::listarAccesorio(); //;
 
 <!--====================== TABLA LISTA ACCESORIOS========================-->
 
-<div class="container col-10 mt-4">
+<div class="container col-11 mt-4">
     <div class="row">
         <div class="col-md-8">
             <div class="card">
@@ -38,6 +38,7 @@ $listAccesorio = \Controllers\InventarioController::listarAccesorio(); //;
                                 <th scope="col">Accesorio</th>
                                 <th scope="col">Cantidad</th>
                                 <th scope="col">Precio</th>
+                                <th scope="col">Fecha</th>
                                 <th scope="col">Acción</th>
                             </tr>
 
@@ -54,11 +55,12 @@ $listAccesorio = \Controllers\InventarioController::listarAccesorio(); //;
                                 <?php foreach ($listAccesorio as $accesorio) : ?>
                                     <tbody>
                                         <tr>
-                                            <td scope="row"><?= $accesorio['idInventario']; ?></td>
-                                            <td><?= $accesorio['NombreC']; ?></td>
-                                            <td><?= $accesorio['Nombre']; ?></td>
-                                            <td><?= $accesorio['Cantidad']; ?></td>
-                                            <td><?= $accesorio['ValorUnitario']; ?></td>
+                                            <td scope="row"><?= $accesorio['idAccesorio']; ?></td>
+                                            <td><?= $accesorio['nombreCategoriaA']; ?></td>
+                                            <td><?= $accesorio['nombreAccesorio']; ?></td>
+                                            <td><?= $accesorio['cantidadStockA']; ?></td>
+                                            <td><?= $accesorio['precioUnidadA']; ?></td>
+                                            <td><?= $accesorio['fechaA']; ?></td>
                                             <td>
                                                 <a href='#' class="btn btn-small btn-primary "><i class=' bx bx-edit-alt'></i> </a>
                                                 <a href="#" class="btn btn-small btn-danger"><i class='bx bx-trash icon'></i></a>
@@ -94,8 +96,7 @@ $listAccesorio = \Controllers\InventarioController::listarAccesorio(); //;
                                     <select class="form-control">
                                         <?php if (sizeof($listCategoria) > 0) : ?>
                                             <?php foreach ($listCategoria as $categoria) : ?>
-                                                <option><?= $categoria['Nombre']; ?></option>
-
+                                                <option><?= $categoria['nombreCategoriaA']; ?></option>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
                                     </select>

@@ -1,10 +1,10 @@
-<?php
+<!-- <?php
 
-use Models\Ventas;
+        //use Models\Ventas;
 
-$ventas = \Controllers\ventasController::listarVentas();
+        //$ventas = \Controllers\ventasController::listarVentas();
 
-?>
+        ?> -->
 
 
 <section>

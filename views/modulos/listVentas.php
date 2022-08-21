@@ -45,7 +45,7 @@ $ventas = \Controllers\ventasController::listarVentas();
                                 <h4>Producto</h4>
                             </div>
                             <div class="col-lg-2 stat ">
-                                <h4>Dirección</h4>
+                                <h4>Cantidad</h4>
                             </div>
                             <div class="col-lg-2 stat ">
                                 <h4>Fecha</h4>
@@ -74,19 +74,19 @@ $ventas = \Controllers\ventasController::listarVentas();
                                         <h5><?= $venta['idRegistro_venta']; ?></h5>
                                     </div>
                                     <div class="col-lg-2  ">
-                                        <h5><?= $venta['NombreC']; ?></h5>
+                                        <h5><?= $venta['nombreCliente']; ?></h5>
                                     </div>
                                     <div class="col-lg-2 ">
-                                        <h5><?= $venta['Nombre'] ?></h5>
+                                        <h5><?= $venta['nombreAccesorio'] ?></h5>
                                     </div>
                                     <div class="col-lg-2 ">
-                                        <h5><?= $venta['Direccion'] ?></h5>
+                                        <h5><?= $venta['cantidadVenta'] ?></h5>
                                     </div>
                                     <div class="col-lg-2 ">
-                                        <h5><?= $venta['Fecha'] ?></h5>
+                                        <h5><?= $venta['fechaVenta'] ?></h5>
                                     </div>
                                     <div class="col-lg-1 ">
-                                        <h5><?= $venta['MontoTotal']; ?></h5>
+                                        <h5>"canti*pre"</h5>
                                     </div>
                                     <div class="col-lg-2">
                                         <a href="#" class=" btn btn-small btn-danger" onclick="return eliminarVenta()"><i class='bx bx-trash icon'></i> Eliminar</a>

@@ -51,9 +51,9 @@ $contactos = \Controllers\ContactosController::listarClientes();
                                 <div class=" col-12">
                                     <tbody>
                                         <td scope="row"><?= $contacto['idCliente']; ?></td>
-                                        <td><?= $contacto['Nombre']; ?></td>
-                                        <td><?= $contacto['Telefono']; ?></td>
-                                        <td><?= $contacto['Direccion']; ?></td>
+                                        <td><?= $contacto['nombreCliente']; ?></td>
+                                        <td><?= $contacto['telefono']; ?></td>
+                                        <td><?= $contacto['direccion']; ?></td>
                                         <td>
                                             <a href='#' class="btn btn-small btn-primary"><i class=' bx bx-edit-alt'></i> </a>
                                             <a href="#" class="btn btn-small btn-danger "><i class='bx bx-trash icon'></i></a>

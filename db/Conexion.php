@@ -11,7 +11,7 @@ class Conexion
     public static function conectar()
     {
         try {
-            $conexion = new PDO('mysql:host=127.0.0.1;dbname=sagu_manillas', 'root', 'root', [
+            $conexion = new PDO('mysql:host=127.0.0.1;dbname=sagu__manillas', 'root', 'root', [
                 PDO::ATTR_PERSISTENT => true, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
             ]);
             $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

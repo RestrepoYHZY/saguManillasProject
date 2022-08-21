@@ -14,7 +14,7 @@ class Contactos
 
     public static function listarClientes(): array
     {
-        $stmt = Conexion::conectar()->prepare("select idCliente, concat(Nombre, ' ', Apellido) as  Nombre, Telefono, Email, Direccion from cliente;");
+        $stmt = Conexion::conectar()->prepare("select idCliente, concat(nombre, ' ', apellido) as  nombreCliente, telefono, direccion from cliente;");
         $stmt->execute();
         $retorno = $stmt->rowCount() > 0 ? $stmt->fetchAll() : [];
         $stmt->closeCursor();
@@ -39,6 +39,4 @@ class Contactos
         $insert->closeCursor();
         return $retorno;
     }
-
-    
 }

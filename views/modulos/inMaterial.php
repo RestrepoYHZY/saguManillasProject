@@ -5,13 +5,13 @@ $listMaterial = \Controllers\InventarioController::listarMaterial(); //;
 ?>
 
 
-<div class="container col-10 mt-3">
+<div class="container col-11 mt-3">
     <h1>Inventarios</h1>
 </div>
 
 
 <section class="containerNav">
-    <div class="container col-10 mt-3">
+    <div class="container col-11 mt-3">
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a class="nav-link " href="inAccesorios">Accesorios</a>
@@ -26,7 +26,7 @@ $listMaterial = \Controllers\InventarioController::listarMaterial(); //;
 
 <!--====================== TABLA LISTAR MATERIA PRIMA=========================-->
 
-<div class="container col-10 mt-4">
+<div class="container col-11 mt-4">
     <div class="row">
         <div class="col-md-8">
             <div class="card">
@@ -36,9 +36,11 @@ $listMaterial = \Controllers\InventarioController::listarMaterial(); //;
                             <tr>
                                 <th scope="col">Codigo</th>
                                 <th scope="col">Material</th>
+                                <th scope="col">Nombre</th>
                                 <th scope="col">Color</th>
                                 <th scope="col">Cantidad</th>
                                 <th scope="col">Precio</th>
+                                <th scope="col">Fecha</th>
                                 <th scope="col">Acción</th>
                             </tr>
                         </thead>
@@ -53,11 +55,13 @@ $listMaterial = \Controllers\InventarioController::listarMaterial(); //;
                             <?php if (sizeof($listMaterial) > 0) : ?>
                                 <?php foreach ($listMaterial as $material) : ?>
                                     <tbody>
-                                        <td scope="row"><?= $material['idInventario']; ?></td>
-                                        <td><?= $material['Nombre']; ?></td>
+                                        <td scope="row"><?= $material['idMateria_prima']; ?></td>
+                                        <td><?= $material['nombreCategoriaM']; ?></td>
+                                        <td><?= $material['nombreMaterial']; ?></td>
                                         <td><?= $material['color']; ?></td>
-                                        <td><?= $material['Cantidad']; ?></td>
-                                        <td><?= $material['ValorUnitario']; ?></td>
+                                        <td><?= $material['cantidadStockM']; ?></td>
+                                        <td><?= $material['precioUnidadM']; ?></td>
+                                        <td><?= $material['fechaM']; ?></td>
                                         <td>
                                             <a href='#' class="btn btn-small btn-primary"><i class=' bx bx-edit-alt'></i> </a>
                                             <a href="#" class="btn btn-small btn-danger "><i class='bx bx-trash icon'></i></a>
@@ -92,10 +96,14 @@ $listMaterial = \Controllers\InventarioController::listarMaterial(); //;
                                     <select class="form-control">
                                         <?php if (sizeof($listCategoriaMaterial) > 0) : ?>
                                             <?php foreach ($listCategoriaMaterial as $categoriaM) : ?>
-                                                <option><?= $categoriaM['Nombre']; ?></option>
+                                                <option><?= $categoriaM['nombreCategoriaM']; ?></option>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
                                     </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="color">Nombre</label>
+                                    <input type="text" name="color" id="color" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="color">Color</label>

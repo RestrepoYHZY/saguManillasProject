@@ -8,7 +8,7 @@ class Inventario
 {
     public static function categoriaAccesorio(): array
     {
-        $stmt = Conexion::conectar()->prepare("SELECT Nombre FROM categoria_producto;");
+        $stmt = Conexion::conectar()->prepare("SELECT nombreCategoriaA FROM categoria_accesorio;");
         $stmt->execute();
         $retorno = $stmt->rowCount() > 0 ? $stmt->fetchAll() : [];
         $stmt->closeCursor();
@@ -20,9 +20,8 @@ class Inventario
     public static function accesorio(): array
     {
         $stmt = Conexion::conectar()->prepare(
-            "select i.idInventario,  cp.Nombre as NombreC,  p.Nombre, i.Cantidad, i.ValorUnitario
-            from inventario as i inner join producto as p on i.idProducto=p.idProducto
-            inner join categoria_producto as cp on cp.idCategoria_producto = p.idCategoria_producto;"
+            "select a.idAccesorio, ca.nombreCategoriaA, a.nombreAccesorio, a.cantidadStockA, a.precioUnidadA, a. fechaA
+            from accesorio as a inner join categoria_accesorio as ca on a.idCategoria_accesorio= ca. idCategoria_accesorio; "
         );
         $stmt->execute();
         $retorno = $stmt->rowCount() > 0 ? $stmt->fetchAll() : [];
@@ -34,7 +33,7 @@ class Inventario
 
     public static function categoriaMaterial(): array
     {
-        $stmt = Conexion::conectar()->prepare("SELECT Nombre FROM categoria_materia_prima;");
+        $stmt = Conexion::conectar()->prepare("SELECT nombreCategoriaM FROM categoria_materia_prima;");
         $stmt->execute();
         $retorno = $stmt->rowCount() > 0 ? $stmt->fetchAll() : [];
         $stmt->closeCursor();
@@ -46,8 +45,8 @@ class Inventario
     public static function material(): array
     {
         $stmt = Conexion::conectar()->prepare(
-            "select i.idInventario, i.Cantidad, i.ValorUnitario, mp.Nombre, mp.color
-            from inventario as i inner join materia_prima as mp on i.idMateriaPrima=mp.idMateriaPrima;"
+            "select m.idMateria_prima, c.nombreCategoriaM, m.nombreMaterial, m.color, m.cantidadStockM, m. precioUnidadM, m.fechaM
+            from materia_prima as m inner join categoria_materia_prima as c on m.idCategoria_materia_prima = c.idCategoria_materia_prima;"
         );
         $stmt->execute();
         $retorno = $stmt->rowCount() > 0 ? $stmt->fetchAll() : [];

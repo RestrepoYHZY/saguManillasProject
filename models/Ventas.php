@@ -15,12 +15,10 @@ class Ventas
     public static function Ventas(): array
     {
         $smtm = Conexion::conectar()->prepare(
-            "select rv.idRegistro_venta, concat(c.Nombre, ' ', c.Apellido) as NombreC, p.Nombre, c.Direccion, rv.Fecha,vp.MontoTotal
+            "select rv.idRegistro_venta, concat(c.Nombre, ' ', c.Apellido) as nombreCliente, a.nombreAccesorio, dv.cantidadVenta, rv.fechaVenta
         from registro_venta as rv inner join cliente as c on rv.idCliente=c.idCliente
-        inner join venta_producto as vp on vp.MontoTotal 
-        inner join producto as p on p.idProducto= vp.idProducto
-        where vp.idRegistro_venta=rv.idRegistro_venta;
-     "
+        inner join accesorio as a
+        inner join detalle_venta as dv on a.idAccesorio= dv.idAccesorio; "
         );
         $smtm->execute();
         $retorno = $smtm->rowCount() > 0 ? $smtm->fetchAll() : [];
